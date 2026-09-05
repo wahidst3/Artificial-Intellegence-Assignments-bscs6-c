@@ -1,0 +1,1 @@
+# Artificial-Intellegence-Assignments-bscs6-c
