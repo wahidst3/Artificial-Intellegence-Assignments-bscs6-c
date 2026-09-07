@@ -1,0 +1,83 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "private_outputs": true,
+      "cell_execution_strategy": "setup"
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "sO4xN9-I5yU9",
+        "collapsed": true
+      },
+      "outputs": [],
+      "source": [
+        "!pip install  -U google-genai"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "fromfromrom google import genai\n",
+        "\n",
+        "APIKEY = \"\"\n",
+        "\n",
+        "clienclientt = genai.Client(api_key=API_KEY)"
+      ],
+      "metadata": {
+        "id": "WxPC-94j7ZBF"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "breakchat = client.chats.create(\n",
+        "    model=\"gemini-3.6-flash\"\n",
+        ")\n",
+        "\n",
+        "print(\"Gemini Chatbot started!\")\n",
+        "print(\"Type 'exit' to stop.\\n\")"
+      ],
+      "metadata": {
+        "id": "rlEKdiB374gj"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "while True:\n",
+        "    user_input = input(\"You: \")\n",
+        "\n",
+        "    if user_input.lower() in [\"exit\", \"quit\", \"bye\"]:\n",
+        "        print(\"Bot: Goodbye!\")\n",
+        "        breakbreak\n",
+        "\n",
+        "    response = chat.send_message(user_input)\n",
+        "\n",
+        "    print(\"Bot:\", response.text)"
+      ],
+      "metadata": {
+        "id": "q9vIOoC08A1Z"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
